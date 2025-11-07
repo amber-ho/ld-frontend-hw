@@ -35,7 +35,7 @@ Learn how to use asyncio and aiohttp to fetch remote resources asynchronously.
 #### Requirements
 Fetch the content of the following URLs asynchronously and save them locally in `HW1/main.py`.
 - https://example.com -> example.html
-- https://github.com/NTUEELightDance/LightDance-Editor/releases/latest/download/editor-blender.zip -> editor-blender.zip
+- https://github.com/NTUEELightDance/LightDance-Editor/releases/latest/download/editor-blender-linux.zip -> editor-blender-linux.zip
 
 #### Examples in lightdance editor
 
