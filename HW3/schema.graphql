@@ -1,0 +1,14 @@
+type Query {
+  hello: String
+  echo(text: String!): String
+  lightdanceGroups(category: String!): [String]
+}
+
+type Mutation {
+  count(increment: Int!): Int
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

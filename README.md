@@ -70,3 +70,48 @@ uv run HW2/client.py
 #### Examples in lightdance editor
 We use async for loops to handle GraphQL subscriptions.
 - `editor-blender/client/__init__.py`:  `Clients.subscribe()`
+
+## HW3
+#### Goal
+Learn how to use GraphQL to interact with a GraphQL server.
+
+#### Tutorials
+
+[Learn GraphQL in 7 Minutes For Beginners](https://youtu.be/Zg4XIpnLWQg?si=qPQNS2Box_VlYSA8)
+
+[Official GraphQL Tutorial](https://graphql.org/learn/)
+
+After you understand the concepts, you can start to play with our minimal example. Run the server (after `uv sync`) in `HW3/server.py` with 
+```
+uv run HW3/server.py
+```
+
+The resolvers are implemented in `HW3/server.py`, but also provided in `HW3/schema.graphql` for reference. You can connect to the GraphQL server's playground at `http://localhost:5000/graphql`, you can test your queries and mutations there. For example, to say hello to server, use the query
+```graphql
+query {
+  hello
+}
+```
+without any variables. Or if you want to increment the counter in server, use the mutation
+```graphql
+mutation($increment: Int) {
+  count(increment: $increment)
+}
+```
+with variables
+```json
+{
+  "increment": 1
+}
+```
+The variables will be plugged into the query/mutation at runtime, where there is a doller sign ($) before the variable name.
+#### Requirements
+
+Complete the TODO in `HW3/client.py`, run it with 
+```bash
+uv run HW3/client.py
+```
+
+#### Examples in lightdance editor
+
+Almost all the interactions with the server are done with GraphQL queries and mutations. You can start from `editor-blender/schemas/[queries | mutations | subscriptions].py`, and see how these gql(...) objects are used throughout the entire project. Also you might want to check out the backend schemas in `editor-server/schema.graphql` and the resolvers written in _**Rust**_  in `editor-server/src/graphql`.
